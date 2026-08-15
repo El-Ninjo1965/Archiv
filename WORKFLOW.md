@@ -104,4 +104,4 @@ WORKFLOW.md
   Das entspricht dem Auftrag (keine zusätzlichen Dateien anlegen).
 
 ### Commit-ID
-*(wird nach dem Commit eingetragen – siehe letzten `git log`-Eintrag)*
+`7ff6890` – „Remove .gitkeep files and add WORKFLOW.md"
