@@ -7,6 +7,7 @@
 - Ziel: Jeder Nachvollziehbare Stand muss jederzeit auf GitHub übertragen und nachvollziehbar sein.
 - Zusätzlich: im Repository `Archiv` unter `Modules/` die Ordner `AI`, `Backup`, `Catchbook`, `Catches`, `Conditions`, `Equipment`, `Export`, `FishDatabase`, `Leaderboard`, `Maps`, `Photos`, `Records`, `Safety`, `Settings`, `Statistics`, `Tides`, `Water` erstellen, jeweils mit `.gitkeep`, anschließend die `.gitkeep`-Dateien wieder entfernen, alles committen/pushen und GitHub-Remote verifizieren.
 - Danach: die vier vorhandenen Modulordner aus `modules/` nach `Modules/` verschieben, inklusive aller Dateien und Unterordner; den leeren `modules/`-Ordner löschen; alles committen/pushen; GitHub-Remote prüfen; das vollständige Protokoll aktualisieren und ebenfalls committen/pushen.
+- Neu: Unter `Modules/` die fehlenden Ordner `AI`, `Backup`, `Catchbook`, `Catches`, `Conditions`, `Equipment`, `Export`, `FishDatabase`, `Leaderboard`, `Maps`, `Photos`, `Records`, `Safety`, `Settings`, `Statistics`, `Tides`, `Water` ergänzen, ohne die vorhandenen Ordner `bluetooth`, `gps`, `moon`, `weather` zu verändern; in jedem dieser neuen Ordner eine `.gitkeep` setzen; committen, pushen, GitHub-Remote prüfen und das Protokoll aktualisieren.
 
 ## Datum/Uhrzeit
 - 2026-08-15 09:25:00 +07:00
@@ -14,6 +15,7 @@
 - 2026-08-15 02:42:42 +00:00 (Erstellung der Module-Ordner mit `.gitkeep`)
 - 2026-08-15 02:42:59 +00:00 (Entfernung der `.gitkeep`-Dateien und finaler Push)
 - 2026-08-15 02:45:27 +00:00 (Verschieben der vorhandenen Modulordner aus `modules/` nach `Modules/` und Löschen des leeren Ordners)
+- 2026-08-15 02:49:13 +00:00 (Ergänzung der fehlenden Modulordner mit `.gitkeep`)
 
 ## Ausgeführte Aktionen
 1. Initialisierung des Arbeitsprotokolls in der Repository-Wurzel.
@@ -34,6 +36,11 @@
 16. Der nun leere `modules/`-Ordner wurde entfernt.
 17. Die Verschiebung wurde mit `git add -A`, Commit `Move module folders into Modules` und `git push origin main` übertragen.
 18. Direkt danach wurde der GitHub-Remote erneut geprüft; `refs/heads/main` zeigte dieselbe Commit-ID wie `HEAD`.
+19. Anschließend wurden die fehlenden Modulordner unter `Modules/` hinzugefügt: `AI`, `Backup`, `Catchbook`, `Catches`, `Conditions`, `Equipment`, `Export`, `FishDatabase`, `Leaderboard`, `Maps`, `Photos`, `Records`, `Safety`, `Settings`, `Statistics`, `Tides`, `Water`.
+20. In jedem dieser Ordner wurde eine `.gitkeep`-Datei angelegt, ohne die bestehenden Ordner `bluetooth`, `gps`, `moon`, `weather` zu verändern.
+21. Die Änderung wurde mit `git add -A`, Commit `Add missing module folders` und `git push origin main` übertragen.
+22. Direkt danach wurde der GitHub-Remote überprüft; `refs/heads/main` zeigte dieselbe Commit-ID wie `HEAD`.
+23. Das Arbeitsprotokoll wurde mit den neuesten Ergebnissen aktualisiert und erneut commit/push ausgeführt.
 
 ## Erstellte/geänderte/gelöschte Dateien und Ordner
 - Erstellt: `WORKFLOW.md`
@@ -68,6 +75,12 @@
 - `git commit -m "Move module folders into Modules"`
 - `git push origin main`
 - `git ls-remote --heads origin main`
+- `mkdir -p Modules/{AI,Backup,Catchbook,Catches,Conditions,Equipment,Export,FishDatabase,Leaderboard,Maps,Photos,Records,Safety,Settings,Statistics,Tides,Water}`
+- `for d in Modules/{AI,Backup,Catchbook,Catches,Conditions,Equipment,Export,FishDatabase,Leaderboard,Maps,Photos,Records,Safety,Settings,Statistics,Tides,Water}; do touch "$d/.gitkeep"; done`
+- `git add -A`
+- `git commit -m "Add missing module folders"`
+- `git push origin main`
+- `git ls-remote --heads origin main`
 
 ## Ergebnisse und Fehler
 - Die 17 Module-Ordner wurden erfolgreich erstellt.
@@ -80,6 +93,9 @@
 - Die vorhandenen vier Modulordner wurden erfolgreich aus `modules/` nach `Modules/` verschoben, und der leere `modules/`-Ordner wurde entfernt.
 - Der Commit `Move module folders into Modules` wurde erfolgreich nach `origin/main` gepusht.
 - Die GitHub-Remote wurde unmittelbar danach erneut geprüft; `origin/main` war synchron mit `HEAD`.
+- Die fehlenden 17 Ordner wurden ergänzt und mit `.gitkeep` versehen, ohne die schon vorhandenen Ordner `bluetooth`, `gps`, `moon` und `weather` zu verändern.
+- Der Commit `Add missing module folders` wurde erfolgreich nach `origin/main` gepusht.
+- Die GitHub-Remote wurde unmittelbar danach erneut geprüft; `origin/main` war synchron mit `HEAD`.
 - Fehler: keine verzeichnet.
 
 ## Commit-ID und Commit-Nachricht
@@ -89,11 +105,14 @@
 - Commit-Nachricht: `Remove gitkeep files from Modules`
 - Commit-ID: `47991d334b730eb7ee88789ffe9261a95e291076`
 - Commit-Nachricht: `Move module folders into Modules`
+- Commit-ID: `2f5a2db357fef62a6c1980a30883fa5607f3eed1`
+- Commit-Nachricht: `Add missing module folders`
 
 ## Push-Status
 - Erfolgreich nach `origin/main` gepusht: `Add Modules folders with gitkeep`
 - Erfolgreich nach `origin/main` gepusht: `Remove gitkeep files from Modules`
 - Erfolgreich nach `origin/main` gepusht: `Move module folders into Modules`
+- Erfolgreich nach `origin/main` gepusht: `Add missing module folders`
 - GitHub-Remote synchronisiert: `origin/main` entspricht dem aktuellen lokalen Stand.
 
 ## Aktueller Branch
@@ -103,5 +122,5 @@
 - `## main...origin/main`
 
 ## HEAD und origin/main
-- `HEAD`: `47991d334b730eb7ee88789ffe9261a95e291076`
-- `origin/main`: `47991d334b730eb7ee88789ffe9261a95e291076`
+- `HEAD`: `2f5a2db357fef62a6c1980a30883fa5607f3eed1`
+- `origin/main`: `2f5a2db357fef62a6c1980a30883fa5607f3eed1`
